@@ -23,4 +23,18 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * The estates that belongs to user
+     */
+    public function estates() {
+        return $this->belongsToMany('App\Estate', 'estate_owners');
+    }
+
+    /**
+     * The bills that belongs to user
+     */
+    public function bills() {
+        return $this->hasMany('App\Bill');
+    }
 }
