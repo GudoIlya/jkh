@@ -10,15 +10,16 @@ class Bill extends Model
     /**
      * Get resources that belongs to bill
      */
-    public function resources() {
-        return $this->hasMany('App\Resource');
+    public function billresources() {
+        return $this->hasMany('App\BillResources');
     }
 
     /**
      * Get services that belongs to bill
      */
-    public function services() {
-        return $this->hasMany('App\Service');
+    public function billservices() {
+        return $this->hasMany('App\BillServices');
     }
+
 
 }
