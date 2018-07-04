@@ -14,6 +14,10 @@ class CreateResourcesTable extends Migration
     {
         Schema::create('resources', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->text('description');
+            $table->unsignedInteger('current_rate_id');
+            $table->foreign('current_rate_id')->references('id')->on('rates');
             $table->timestamps();
         });
     }

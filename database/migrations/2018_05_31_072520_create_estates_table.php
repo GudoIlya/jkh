@@ -14,6 +14,8 @@ class CreateEstatesTable extends Migration
     {
         Schema::create('estates', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->double('meters_number');
             $table->timestamps();
         });
     }
