@@ -37,4 +37,20 @@ class User extends Authenticatable
     public function bills() {
         return $this->hasMany('App\Bill');
     }
+
+    /**
+     * Get the resources that belongs to user
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function userresources() {
+        return $this->belongsToMany('App\Resource', 'user_resources');
+    }
+
+    /**
+     * Get the services that belongs to user
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function userservices() {
+        return $this->belongsToMany('App\Service', 'user_services');
+    }
 }
