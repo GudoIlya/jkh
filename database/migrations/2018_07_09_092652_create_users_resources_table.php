@@ -14,11 +14,11 @@ class CreateUsersResourcesTable extends Migration
     {
         Schema::create('users_resources', function (Blueprint $table) {
             $table->unsignedInteger('resource_id');
-            $table->foreign('resource_id')->references('id')->on('Resources');
+            $table->foreign('resource_id')->references('id')->on('resources');
             $table->unsignedInteger('rate_id');
-            $table->foreign('rate_id')->references('id')->on('Rates');
+            $table->foreign('rate_id')->references('id')->on('rates');
             $table->unsignedInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('Users')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->date('includingResourceDate');
             $table->increments('id');
             $table->timestamps();
