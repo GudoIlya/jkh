@@ -62,6 +62,7 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
+                                <li><a href="{{ url('/user/profile') }}"><i class="fa fa-btn fa-user"></i>@lang('mainmenu.l_userprofile')</a></li>
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>@lang('mainmenu.l_logout')</a></li>
                             </ul>
                         </li>

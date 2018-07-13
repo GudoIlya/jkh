@@ -19,3 +19,6 @@
 Route::auth();
 
 Route::get('/', 'HomeController@index');
+
+Route::get('/user/profile', 'User\UserController@index')->name('userProfileIndex');
+Route::post('/user/profile', 'User\UserController@saveUser');

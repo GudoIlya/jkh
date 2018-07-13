@@ -1,9 +1,11 @@
 <?php
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers\Rate;
 
 use App\Rate;
 use Validator;
-use App\Http\Controllers\Controller;
+use App\Http\Requests;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RatesController extends Controller{
 
