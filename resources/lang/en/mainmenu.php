@@ -9,5 +9,7 @@ return [
     'l_userprofile' => 'Profile',
 
     'l_register' => 'Register',
-    'l_logout'  => 'Log Out'
+    'l_logout'  => 'Log Out',
+
+    'l_go_back' => "Go back!",
 ];

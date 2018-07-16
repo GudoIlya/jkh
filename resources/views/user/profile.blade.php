@@ -72,6 +72,7 @@
                                     <button type="submit" class="btn btn-primary">
                                         <i class="fa fa-btn fa-save"></i> Сохранить
                                     </button>
+                                    <a href="{{ route('changePasswordIndex')  }}">@lang('mainmenu.l_change_password')</a>
                                 </div>
                             </div>
                         </form>

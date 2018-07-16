@@ -25,7 +25,7 @@ return [
     'f_surname' => 'Your Surname',
     'f_email' => 'E-mail Address',
     'f_password' => 'Password',
-    'f_passwordconfirm' => 'Repeat password',
+    'f_password_confirm' => 'Repeat password',
 
     // buttons
     'b_login_in' => 'Login',
@@ -35,5 +35,7 @@ return [
     // Надписи
     't_remember_me' => 'Remember Me',
     't_forgetpass' => 'Forgot Your Password?',
-    't_click_to_reset_password' => 'Click here to reset your password'
+    't_click_to_reset_password' => 'Click here to reset your password',
+    't_success_change_password' => 'User password changed successfully',
+    't_wrong_old_password' => 'Wrong password',
 ];

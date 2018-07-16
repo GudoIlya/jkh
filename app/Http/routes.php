@@ -20,5 +20,8 @@ Route::auth();
 
 Route::get('/', 'HomeController@index');
 
+// User
 Route::get('/user/profile', 'User\UserController@index')->name('userProfileIndex');
 Route::post('/user/profile', 'User\UserController@saveUser');
+Route::get('/user/changepassword', 'User\UserController@changePasswordIndex')->name('changePasswordIndex');
+Route::post('/user/changepassword', 'User\UserController@changePassword');
