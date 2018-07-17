@@ -1,10 +1,11 @@
 <?php
-namespace App\Http\Controllers\Rate;
+namespace App\Http\Controllers\Rates;
 
 use App\Rate;
 use Validator;
 use App\Http\Requests;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
 class RatesController extends Controller{
@@ -13,6 +14,10 @@ class RatesController extends Controller{
         $this->middleware('auth');
     }
 
+    public function index() {
+        $user = Auth::user();
+        return view('rates/index', []);
+    }
     public function justrates() {
         $rates = Rate::rates();
         return view('rates/rates.nolayout', ['rates' => $rates]);

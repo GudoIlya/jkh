@@ -9,6 +9,9 @@ return [
     'l_userprofile' => 'Профиль',
     'l_change_password' => 'Изменить пароль',
 
+    //Линки на тарифы
+    'l_rates' => 'Тарифы',
+
     'l_register' => 'Регистрация',
     'l_logout'  => 'Выйти',
 

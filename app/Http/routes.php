@@ -25,3 +25,7 @@ Route::get('/user/profile', 'User\UserController@index')->name('userProfileIndex
 Route::post('/user/profile', 'User\UserController@saveUser');
 Route::get('/user/changepassword', 'User\UserController@changePasswordIndex')->name('changePasswordIndex');
 Route::post('/user/changepassword', 'User\UserController@changePassword');
+
+// Rates
+// Индексная страница для тарифов, которые ввел пользователь
+Route::get('/rates', 'Rates\RatesController@index')->name('ratesIndex');
