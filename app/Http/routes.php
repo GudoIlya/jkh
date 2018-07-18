@@ -29,3 +29,5 @@ Route::post('/user/changepassword', 'User\UserController@changePassword');
 // Rates
 // Индексная страница для тарифов, которые ввел пользователь
 Route::get('/rates', 'Rates\RatesController@index')->name('ratesIndex');
+Route::post('/rates/save_rate', 'Rates\RatesController@saveRate')->name('saveRate');
+Route::post('/rates/delete_rate', 'Rates\RatesController@deleteRate')->name('deleteRate');

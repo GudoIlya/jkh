@@ -5,6 +5,7 @@ use App\Rate;
 use Validator;
 use App\Http\Requests;
 use Illuminate\Http\Request;
+use App\Http\Requests\Rate\RateSaveRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,8 +16,22 @@ class RatesController extends Controller{
     }
 
     public function index() {
-        $user = Auth::user();
-        return view('rates/index', []);
+        $user_id = Auth::id();
+        $rates = Rate::all();
+        return view('rates/index', ['user_id' => $user_id, 'rates' => $rates]);
+    }
+
+    public function saveRate(RateSaveRequest $request) {
+        Rate::create([
+            'name' => $request['name'],
+            'price' => $request['price'],
+            'user_id' => $request['user_id']
+        ]);
+        return redirect()->back();
+    }
+
+    public function deleteRate(array $data){
+        return redirect()->back();
     }
     public function justrates() {
         $rates = Rate::rates();

@@ -7,7 +7,25 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">@lang('rates.rates_info_header')</div>
                     <div class="panel-body">
-                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/rates/save_rate') }}">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-5">Наименование тарфиа</div><div class="col-md-5">Цена</div>
+                            </div>
+                            @foreach ($rates as $rate)
+                                  <div class="row">
+                                      <div class="col-md-5">{{ $rate->name  }}</div><div class="col-md-5">{{ $rate->price }}
+                                          <form action="{{ route('deleteRate')  }}">
+                                              <input type="hidden" value="{{ $rate->id  }}">
+                                              <input type="submit" value="-">
+                                          </form>
+                                      </div>
+                                  </div>
+                            @endforeach
+                        </div>
+                    </div>
+                    <div class="panel-heading">Добавить</div>
+                    <div class="panel-body">
+                        <form class="form-horizontal" role="form" method="POST" action="{{ route('saveRate') }}">
                             {{ csrf_field() }}
                             <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                                 <label for="nr_name" class="col-md-4 control-label">@lang('rates.f_rate_name')</label>
@@ -33,6 +51,8 @@
                                     @endif
                                 </div>
                             </div>
+
+                            <input type="hidden" name="user_id" value="{{ $user_id  }}">
 
                             <div class="form-group">
                                <div class="col-md-6 col-md-offset-4">
