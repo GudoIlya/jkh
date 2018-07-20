@@ -7,21 +7,23 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">@lang('rates.rates_info_header')</div>
                     <div class="panel-body">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-5">Наименование тарфиа</div><div class="col-md-5">Цена</div>
-                            </div>
-                            @foreach ($rates as $rate)
-                                  <div class="row">
-                                      <div class="col-md-5">{{ $rate->name  }}</div><div class="col-md-5">{{ $rate->price }}
-                                          <form action="{{ route('deleteRate')  }}">
-                                              <input type="hidden" value="{{ $rate->id  }}">
-                                              <input type="submit" value="-">
-                                          </form>
-                                      </div>
-                                  </div>
-                            @endforeach
-                        </div>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <td>Наименование тарифа</td>
+                                        <td colspan="2">Цена</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                @foreach ($rates as $rate)
+                                    <tr>
+                                        <td>{{ $rate->name  }}</td>
+                                        <td>{{ $rate->price }}</td>
+                                        <td><button class="ajaxbutton" data-attr-action="delete_rate" data-attr-data="{{ json_encode($rate) }}">X</button></td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
                     </div>
                     <div class="panel-heading">Добавить</div>
                     <div class="panel-body">

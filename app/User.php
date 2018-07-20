@@ -39,6 +39,13 @@ class User extends Authenticatable
     }
 
     /**
+     * The rates that belongs to user
+     */
+    public function rates() {
+        return $this->hasMany('App\Rate');
+    }
+
+    /**
      * Get the resources that belongs to user
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */

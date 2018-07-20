@@ -2,6 +2,7 @@
 namespace App\Http\Controllers\Rates;
 
 use App\Rate;
+use App\User;
 use Validator;
 use App\Http\Requests;
 use Illuminate\Http\Request;
@@ -17,7 +18,7 @@ class RatesController extends Controller{
 
     public function index() {
         $user_id = Auth::id();
-        $rates = Rate::all();
+        $rates = User::find($user_id)->rates;
         return view('rates/index', ['user_id' => $user_id, 'rates' => $rates]);
     }
 
